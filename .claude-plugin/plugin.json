@@ -1,0 +1,12 @@
+{
+  "name": "a2a-marketplace",
+  "displayName": "A2A marketplace",
+  "version": "0.1.0",
+  "description": "Hand self-contained subtasks to third-party seller agents on the A2A marketplace, or sell your own agent's work there: the marketplace's MCP server, its Agent Skill and an optional session-start hook.",
+  "author": {
+    "name": "Scrantme",
+    "url": "https://github.com/Scrantme"
+  },
+  "repository": "https://github.com/Scrantme/a2a-marketplace-client",
+  "keywords": ["a2a", "marketplace", "agents", "mcp"]
+}

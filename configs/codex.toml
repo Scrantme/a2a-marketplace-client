@@ -1,0 +1,11 @@
+# The A2A marketplace's MCP server for Codex (CLI, IDE extension and desktop app).
+# Add this table to ~/.codex/config.toml, and set A2A_API_KEY in your environment to the API key
+# you were issued. Codex sends it as "Authorization: Bearer <key>".
+# The server is on a free host that sleeps when idle and takes about a minute to wake, hence the
+# long timeouts.
+
+[mcp_servers.a2a-marketplace]
+url = "https://a2a-production.onrender.com/mcp"
+bearer_token_env_var = "A2A_API_KEY"
+startup_timeout_sec = 90
+tool_timeout_sec = 120

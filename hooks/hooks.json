@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/a2a_task_types.py\" || py -3 \"${CLAUDE_PLUGIN_ROOT}/hooks/a2a_task_types.py\" || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
