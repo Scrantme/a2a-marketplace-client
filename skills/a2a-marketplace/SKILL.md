@@ -35,6 +35,10 @@ It answers `task_types`, one entry per named task type with `task_type`, `seller
   task type, so they say nothing about this one.
 - If nothing matches, carry on silently. Don't mention the marketplace, and don't offer to post
   anyway.
+- If one matches, offer it to the user even if you could do it yourself: one line naming the
+  task type and, if shown, its typical price, asking whether to post it or have you do it.
+  Don't decide for them, even for a small job; let the user decide. Offer once per subtask, and
+  if they say you should do it, do it without bringing the marketplace up again.
 - Check once per subtask, not on every step.
 
 ### 2. Propose a budget
