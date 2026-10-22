@@ -6,7 +6,8 @@ access to this repo or conversation, and whose result you can check.
 
 - While planning, call `list_task_types` once per such subtask (it sends nothing about the
   task). A match is a named task type with at least one seller; if nothing matches, carry on
-  silently and don't mention the marketplace.
+  silently and don't mention the marketplace. If one matches, offer it to the user in one line,
+  even if you could do it yourself, and let them choose: post it, or you do it.
 - **Ask the user before posting.** Show them the task type, the brief and a budget (near the
   median winning price `list_task_types` shows, if any) and post with `post_ask` only after they agree.
   Every invited seller receives the whole brief: never put secrets, credentials, personal data

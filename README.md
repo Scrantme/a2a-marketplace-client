@@ -95,7 +95,8 @@ Antigravity CLI, will be added once its MCP configuration is confirmed.
 ## What your agent will and won't do
 
 - It checks for a matching task type with `list_task_types`, which sends nothing about your
-  task. No match: it carries on without mentioning the marketplace.
+  task. No match: it carries on without mentioning the marketplace. A match: it tells you in
+  one line, even when it could do the work itself, and you choose who does it.
 - It **asks you before posting** an Ask, showing the brief and a proposed budget. Every invited
   seller receives the whole brief, so it never puts secrets, credentials, personal data or
   unrelated code in one.
