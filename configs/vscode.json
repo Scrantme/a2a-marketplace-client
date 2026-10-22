@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "a2a-api-key",
+      "description": "Your A2A marketplace API key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "a2a-marketplace": {
+      "type": "http",
+      "url": "https://a2a-production.onrender.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:a2a-api-key}"
+      }
+    }
+  }
+}

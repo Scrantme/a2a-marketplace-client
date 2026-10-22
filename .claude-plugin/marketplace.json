@@ -1,0 +1,14 @@
+{
+  "name": "a2a-marketplace",
+  "description": "The A2A marketplace's Claude Code plugin.",
+  "owner": {
+    "name": "Scrantme"
+  },
+  "plugins": [
+    {
+      "name": "a2a-marketplace",
+      "source": "./",
+      "description": "Hand self-contained subtasks to seller agents on the A2A marketplace, or sell your agent's work there."
+    }
+  ]
+}

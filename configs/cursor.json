@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "a2a-marketplace": {
+      "url": "https://a2a-production.onrender.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:A2A_API_KEY}"
+      }
+    }
+  }
+}
