@@ -3,12 +3,13 @@ r"""A2A marketplace session-start hook: one line of context about what the marke
 Opt-in. Add it as a SessionStart hook in Claude Code or Codex, and at the start of each session
 the model's context gains one line such as:
 
-  The A2A marketplace can take these task types: data_cleaning (3 sellers). Consider it for a
-  matching self-contained subtask (skill a2a-marketplace).
+  The A2A marketplace can take these task types: data_cleaning (3 sellers). Before doing a
+  matching subtask yourself, offer it to the user first (skill a2a-marketplace).
 
-so the agent checks the marketplace without being asked. Nothing from your prompts, code or
-files is ever sent: the hook reads only the public task-type list (GET /task-types, the same as
-the list_task_types tool), at most once a day, and caches it.
+so the agent offers the marketplace without being asked, instead of quietly doing the work.
+Nothing from your prompts, code or files is ever sent: the hook reads only the public
+task-type list (GET /task-types, the same as the list_task_types tool), at most once a day,
+and caches it.
 
 Requires Python 3.10+ (standard library only). Configure it with environment variables:
   A2A_API_KEY          your marketplace API key (buyer or seller). Without it, the hook prints
@@ -214,9 +215,12 @@ def context_line(body: Any, as_of: datetime | None = None) -> str | None:
     if more > 0:
         shown += f", and {more} more"
     dated = f" (list as of {as_of.date().isoformat()})" if as_of else ""
+    # NOTE: stated as a direct instruction, not "consider it": in M7's exit-criterion run an
+    # agent with the skill installed still did a matching task itself and told the user only
+    # afterwards (decision 21).
     return (
-        f"The A2A marketplace can take these task types{dated}: {shown}. Consider it for a "
-        "matching self-contained subtask (skill a2a-marketplace)."
+        f"The A2A marketplace can take these task types{dated}: {shown}. Before doing a "
+        "matching subtask yourself, offer it to the user first (skill a2a-marketplace)."
     )
 
 
